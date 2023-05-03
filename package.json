@@ -12,7 +12,9 @@
     "test": "vitest"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.7",
     "@types/node": "^18",
+    "daisyui": "^2.51.6",
     "nuxt": "^3.4.3",
     "vitest": "^0.30.1"
   },
