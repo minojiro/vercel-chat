@@ -10,11 +10,11 @@ const handleSubmit = async (body: { body: string; userName: string }) => {
 </script>
 
 <template>
-  <div>
-    <div>
+  <div class="mx-auto max-w-lg">
+    <div class="py-5 top-0 sticky bg-base-100">
       <PostForm :onSubmit="handleSubmit" />
     </div>
-    <div>
+    <div class="flex flex-col gap-3">
       <PostItem v-for="post in posts" :key="post.id" :post="post" />
     </div>
   </div>

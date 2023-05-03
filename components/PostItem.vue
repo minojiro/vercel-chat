@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{
+import dayjs from "dayjs";
+
+const props = defineProps<{
   post: {
     body: string;
     userName: string;
@@ -7,14 +9,18 @@ defineProps<{
     id: number;
   };
 }>();
+
+const formattedCreatedAt = computed(() =>
+  dayjs(props.post.createdAt).format("YYYY/MM/DD HH:mm")
+);
 </script>
 
 <template>
-  <section>
-    <hr />
-    <p>{{ post.id }}</p>
-    <p>{{ post.createdAt }}</p>
-    <p>{{ post.userName }}</p>
+  <section class="bg-base-200 p-2 rounded">
+    <div class="flex gap-2 text-sm">
+      <p class="font-bold">{{ post.userName }}</p>
+      <p>{{ formattedCreatedAt }}</p>
+    </div>
     <p>{{ post.body }}</p>
   </section>
 </template>

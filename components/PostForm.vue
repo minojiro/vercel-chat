@@ -20,15 +20,25 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form @submit.prevent="handleSubmit" class="flex items-end gap-3">
     <label>
-      <p>userName</p>
-      <input type="text" v-model="userName" />
+      <p>ニックネーム</p>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        type="text"
+        v-model="userName"
+      />
     </label>
     <label>
-      <p>body</p>
-      <input type="text" v-model="body" placeholder="hello!" autofocus />
+      <p>メッセージ</p>
+      <input
+        class="input input-bordered w-full max-w-xs"
+        type="text"
+        v-model="body"
+        placeholder="こんにちは！"
+        autofocus
+      />
     </label>
-    <button :disabled="!isSubmittable" type="submit">submit</button>
+    <button class="btn" :disabled="!isSubmittable" type="submit">送信</button>
   </form>
 </template>
