@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  docker-node-modules:
+
 services:
   db:
     image: postgres:15-alpine
@@ -9,3 +12,24 @@ services:
       - POSTGRES_DB=app
     ports:
       - 5432:5432
+
+  app:
+    image: node:18-alpine3.16
+    environment:
+      - POSTGRES_PRISMA_URL=postgresql://app:app@db:5432/app?ssl=false
+      - POSTGRES_URL_NON_POOLING=postgresql://app:app@db:5432/app?ssl=false
+    ports:
+      - 3000:3000
+    links:
+      - db
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - docker-node-modules:/app/node_modules
+    command: sh -c " \
+      npm install -g pnpm && \
+      pnpm i && \
+      npx prisma generate && \
+      npx prisma db push && \
+      pnpm run dev"
+
