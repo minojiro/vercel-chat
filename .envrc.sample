@@ -1,0 +1,2 @@
+POSTGRES_PRISMA_URL=postgresql://app:app@localhost:5432/app?ssl=false
+POSTGRES_URL_NON_POOLING=postgresql://app:app@localhost:5432/app?ssl=false
