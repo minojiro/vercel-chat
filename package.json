@@ -6,10 +6,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/node": "^18",
-    "nuxt": "^3.4.3"
+    "nuxt": "^3.4.3",
+    "vitest": "^0.30.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "prisma": "^4.13.0",
+    "yup": "^1.1.1"
   }
 }
