@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const userName = ref("user1");
+import kawaiiJapaneseNicknames from "kawaii-japanese-nickname";
+const getNickname = () => {
+  const [japanese] =
+    kawaiiJapaneseNicknames[~~(Math.random() * kawaiiJapaneseNicknames.length)];
+  return japanese;
+};
+const userName = ref(getNickname());
 const body = ref("");
 const props = defineProps<{
   onSubmit: (payload: { body: string; userName: string }) => Promise<void>;

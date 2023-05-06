@@ -22,6 +22,7 @@
   "dependencies": {
     "@prisma/client": "^4.13.0",
     "dayjs": "^1.11.7",
+    "kawaii-japanese-nickname": "^1.0.4",
     "prisma": "^4.13.0",
     "yup": "^1.1.1"
   }

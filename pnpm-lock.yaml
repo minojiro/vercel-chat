@@ -7,6 +7,9 @@ dependencies:
   dayjs:
     specifier: ^1.11.7
     version: 1.11.7
+  kawaii-japanese-nickname:
+    specifier: ^1.0.4
+    version: 1.0.4
   prisma:
     specifier: ^4.13.0
     version: 4.13.0
@@ -3492,6 +3495,10 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.11
     dev: true
+
+  /kawaii-japanese-nickname@1.0.4:
+    resolution: {integrity: sha512-ivSN+Q+FRICVWI/hVnZ3rbggKApnnuXmroGzXdSudCrq+teiAqHotRWKqd37NOVMTZPr5aTGcn2STcnGlYhwZQ==}
+    dev: false
 
   /keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
